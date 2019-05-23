@@ -1,7 +1,6 @@
 spring:
   profiles:
     active: dev
-spring:
   application:
     name: jesse-client-provider
 ---
