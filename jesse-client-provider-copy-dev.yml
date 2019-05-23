@@ -1,3 +1,122 @@
+spring:
+  profiles:
+    active: dev
+---
+spring:
+  profiles: dev
+
+server:
+  port: 6000
+
+spring:
+  application:
+    name: jesse-client-provider
+
+management:
+  port: 6100
+  contextPath: /actuator
+
+eureka:
+  statusPageUrlPath: ${management.contextPath}/info
+  healthCheckUrlPath: ${management.contextPath}/health
+  client:
+    serviceUrl:
+      defaultZone: http://server1:7000/eureka/
+  instance:
+      non-secure-port: ${server.port}
+
+mybatis:
+  mapper-locations: classpath*:com/jesse/jesseclientprovider/dao/**/mapper/*Mapper*.xml
+  type-aliases-package: com.jesse.jesseclientprovider.dao.entity
+  config-location: classpath:SqlMapConfig.xml
+
+mapper:
+  mappers:
+      - com.jesse.jesseclientprovider.dao.mapper
+  not-empty: false
+  identity: MYSQL
+
+druid:
+  type: com.alibaba.druid.pool.DruidDataSource
+  master:
+    url: jdbc:mysql://127.0.0.1:3306/test2?useUnicode=true&characterEncoding=UTF-8&autoReconnect=true&zeroDateTimeBehavior=convertToNull&useUnicode=true&useSSL=false
+    username: root
+    password: root
+    driver-class-name: com.mysql.jdbc.Driver
+    filters: stat
+    maxActive: 100
+    initialSize: 3
+    maxWait: 60000
+    minIdle: 3
+    timeBetweenEvictionRunsMillis: 60000
+    minEvictableIdleTimeMillis: 300000
+    validationQuery: select 'x'
+    testWhileIdle: true
+    testOnBorrow: false
+    testOnReturn: false
+    poolPreparedStatements: true
+    maxOpenPreparedStatements: 20
+
+---
+spring:
+  profiles: test
+
+server:
+  port: 6000
+
+spring:
+  application:
+    name: jesse-client-provider
+
+management:
+  port: 6100
+  contextPath: /actuator
+
+eureka:
+  statusPageUrlPath: ${management.contextPath}/info
+  healthCheckUrlPath: ${management.contextPath}/health
+  client:
+    serviceUrl:
+      defaultZone: http://server1:7000/eureka/
+  instance:
+      non-secure-port: ${server.port}
+
+mybatis:
+  mapper-locations: classpath*:com/jesse/jesseclientprovider/dao/**/mapper/*Mapper*.xml
+  type-aliases-package: com.jesse.jesseclientprovider.dao.entity
+  config-location: classpath:SqlMapConfig.xml
+
+mapper:
+  mappers:
+      - com.jesse.jesseclientprovider.dao.mapper
+  not-empty: false
+  identity: MYSQL
+
+druid:
+  type: com.alibaba.druid.pool.DruidDataSource
+  master:
+    url: jdbc:mysql://127.0.0.1:3306/test2?useUnicode=true&characterEncoding=UTF-8&autoReconnect=true&zeroDateTimeBehavior=convertToNull&useUnicode=true&useSSL=false
+    username: root
+    password: root
+    driver-class-name: com.mysql.jdbc.Driver
+    filters: stat
+    maxActive: 100
+    initialSize: 3
+    maxWait: 60000
+    minIdle: 3
+    timeBetweenEvictionRunsMillis: 60000
+    minEvictableIdleTimeMillis: 300000
+    validationQuery: select 'x'
+    testWhileIdle: true
+    testOnBorrow: false
+    testOnReturn: false
+    poolPreparedStatements: true
+    maxOpenPreparedStatements: 20
+
+---
+spring:
+  profiles: prod
+
 server:
   port: 6000
 
