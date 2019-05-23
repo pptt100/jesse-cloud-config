@@ -1,6 +1,8 @@
 ﻿spring:
   profiles:
     active: dev
+  application:
+    name: jesse-client-provider
 ---
 spring:
   profiles: dev
@@ -8,9 +10,7 @@ spring:
 server:
   port: 8001
 
-spring:
-  application:
-    name: jesse-client-provider
+
 
 management:
   port: 8100
@@ -63,9 +63,6 @@ spring:
 server:
   port: 8002
 
-spring:
-  application:
-    name: jesse-client-provider
 
 management:
   port: 8100
@@ -118,9 +115,6 @@ spring:
 server:
   port: 8003
 
-spring:
-  application:
-    name: jesse-client-provider
 
 management:
   port: 8100
