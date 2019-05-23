@@ -1,5 +1,4 @@
-﻿
-server:
+﻿server:
   port: 8000
 
 spring:
@@ -50,3 +49,4 @@ druid:
     testOnReturn: false
     poolPreparedStatements: true
     maxOpenPreparedStatements: 20
+
