@@ -1,7 +1,4 @@
-﻿spring
-    profiles:
-        active: 
----
+﻿
 server:
   port: 8000
 
