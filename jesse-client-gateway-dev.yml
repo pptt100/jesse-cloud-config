@@ -44,9 +44,9 @@ zuul:
       serviceId: jesse-client-provider
 
 hystrix:
-	command:
-		default:
-			execution:
-				 isolation:
-					thread:
-						timeoutInMilliseconds: 5000
+  command:
+	default:
+	  execution:
+		isolation:
+		  thread:
+			timeoutInMilliseconds: 5000
