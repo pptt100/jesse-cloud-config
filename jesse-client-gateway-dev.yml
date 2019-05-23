@@ -1,4 +1,4 @@
-﻿
+
 
 server:
   port: 5000
@@ -50,7 +50,3 @@ zuul:
       sensitiveHeaders: Access-Control-Allow-Origin,Access-Control-Allow-Methods
       path: /provider/**
       serviceId: jesse-client-provider
-
-
-
-
