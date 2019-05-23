@@ -42,11 +42,3 @@ zuul:
       sensitiveHeaders: Access-Control-Allow-Origin,Access-Control-Allow-Methods
       path: /provider/**
       serviceId: jesse-client-provider
-
-hystrix:
-  command:
-    default:
-	  execution:
-		isolation:
-		  thread:
-			timeoutInMilliseconds: 5000
