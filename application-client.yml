@@ -1,6 +1,20 @@
-﻿spring
-    profiles:
-        active: dev
+﻿
+server:
+  port: 9000
 
----
+spring:
+  application:
+    name: jesse-client-provider
 
+management:
+  port: 9100
+  contextPath: /actuator
+
+eureka:
+  statusPageUrlPath: ${management.contextPath}/info
+  healthCheckUrlPath: ${management.contextPath}/health
+  client:
+    serviceUrl:
+      defaultZone: http://server1:7000/eureka/
+  instance:
+    non-secure-port: ${server.port}
