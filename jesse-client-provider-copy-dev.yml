@@ -1,16 +1,15 @@
 spring:
   profiles:
     active: dev
+spring:
+  application:
+    name: jesse-client-provider
 ---
 spring:
   profiles: dev
 
 server:
   port: 6001
-
-spring:
-  application:
-    name: jesse-client-provider
 
 management:
   port: 6100
@@ -64,10 +63,6 @@ spring:
 server:
   port: 6002
 
-spring:
-  application:
-    name: jesse-client-provider
-
 management:
   port: 6100
   contextPath: /actuator
@@ -119,10 +114,6 @@ spring:
 
 server:
   port: 6003
-
-spring:
-  application:
-    name: jesse-client-provider
 
 management:
   port: 6100
