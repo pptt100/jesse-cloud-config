@@ -45,7 +45,7 @@ zuul:
 
 hystrix:
   command:
-	default:
+    default:
 	  execution:
 		isolation:
 		  thread:
