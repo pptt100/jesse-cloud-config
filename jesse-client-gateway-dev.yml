@@ -22,14 +22,6 @@ eureka:
     instance-id: server2
     non-secure-port: ${server.port}
 
-hystrix:
- command:
-  default:
-   execution:
-    isolation:
-     thread:
-      timeoutInMilliseconds: 5000
-
 ribbon:
   eureka:
     enabled: true
@@ -50,3 +42,11 @@ zuul:
       sensitiveHeaders: Access-Control-Allow-Origin,Access-Control-Allow-Methods
       path: /provider/**
       serviceId: jesse-client-provider
+
+hystrix:
+	command:
+		default:
+			execution:
+				 isolation:
+					thread:
+						timeoutInMilliseconds: 5000
